@@ -39,6 +39,23 @@ $('#pets').on('click', 'a', function(e){
 
 
 
+$('form').submit(function(e) {
+  // By default, the form will attempt to do it's own local POST so we want to prevent that default behavior
+  e.preventDefault();
+
+  var url = $(this).attr("action"); // Retrieve the action from the form
+  var formData = $(this).serialize();
+
+  $.post(url, formData, function(response){
+    $('#message').html('<p> Pet added! </p>');
+
+    // What do we get in the response?
+    console.log(response);
+  });
+});
+
+
+
 
 
 }); // ending $(document).ready

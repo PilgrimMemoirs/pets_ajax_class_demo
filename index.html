@@ -8,6 +8,23 @@
   </head>
   <body>
 
+    <div id="message"></div>
+    <form action="https://petdibs.herokuapp.com/pets" method="post">
+      <section>
+        <label>Name</label>
+        <input type="text" id="name" name="name"></input>
+      </section>
+      <section>
+        <label>Age</label>
+        <input type="text" id="age" name="age"></input>
+      </section>
+
+      <section class="button">
+        <button type="submit">Add Pet</button>
+      </section>
+    </form>
+
+
     <button id="load"> Fetch! </button>
 
     <!-- Pet Profile pop-up -->
