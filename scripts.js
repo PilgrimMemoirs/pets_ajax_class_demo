@@ -4,17 +4,24 @@ $(document).ready(function(){
 var url = 'https://petdibs.herokuapp.com/pets';
 
 // Make a New Pet
-var data = {
-  name: "Bobcat",
-  age: 50,
-  breed: "cat"
-}
+// var data = {
+//   name: "Bobcat2",
+//   age: 50,
+//   breed: "cat"
+// }
 
 var callback = function(){
   console.log("Success!");
 };
 
-$.post(url, data, callback);
+
+$('form').submit(function(e){
+  e.preventDefault();
+
+  var formData = $(this).serialize();
+  $.post(url, formData, callback);
+})
+
 
 
 

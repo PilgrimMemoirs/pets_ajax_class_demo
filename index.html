@@ -10,10 +10,17 @@
 
     <button id="load"> Fetch! </button>
 
+    <form action="https://petdibs.herokuapp.com/pets" method="POST">
+      <input type="text" name="name"></input>
+      <button type="submit"> Create Pet </button>
+    </form>
+
+
+
     <!-- Pet Profile pop-up -->
     <div id="profile">
       <h2 id="message"> </h2>
-      <h3 id="name"> </h3>
+      <!-- <h3 id="name"> </h3> -->
       <p id="breed"></p>
       <p id="age"></p>
     </div>
