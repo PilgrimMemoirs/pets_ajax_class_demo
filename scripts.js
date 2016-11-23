@@ -1,10 +1,28 @@
 // // scripts.js
 $(document).ready(function(){
 
-  // Which URL do we want to 'get'?
-  var url = 'https://petdibs.herokuapp.com/pets';
+var url = 'https://petdibs.herokuapp.com/pets';
 
-  // What do we want to happen when we get our response?
+// Make a New Pet
+var data = {
+  name: "Bobcat",
+  age: 50,
+  breed: "cat"
+}
+
+var callback = function(){
+  console.log("Success!");
+};
+
+$.post(url, data, callback);
+
+
+
+
+
+
+// Show all pets
+
   var successCallback = function (response) {
     for (var i=0; i < response.length; i++ ){
       $('#pets').append("<h3><a href=" + url + "/" + response[i].id + ">" + response[i].name + "</a></h3>");
@@ -16,10 +34,7 @@ $(document).ready(function(){
   })
 
 
-//click on a pet, show more information on that pet
-//click event, that will make an ajax get request for that specific pet, by ID
-// If successful, then have a pop-up with pets info
-
+// Show Pet Information
 $('#pets').on('click', 'a', function(e){
   e.preventDefault();
 
@@ -36,6 +51,12 @@ $('#pets').on('click', 'a', function(e){
     alert("Failed.");
   })
 });
+
+
+
+
+
+
 
 
 
